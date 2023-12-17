@@ -1,5 +1,0 @@
-fastapi
-torch
-transformers
-uvicorn
-pytest
