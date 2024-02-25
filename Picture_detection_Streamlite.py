@@ -1,6 +1,7 @@
 #streamlit run Picture_detection_Streamlite.py
 #pip install certifi
-#security find-certificate -a -p > ~/all_mac_certs.pem; export SSL_CERT_FILE=~/all_mac_certs.pem; export REQUESTS_CA_BUNDLE=~/all_mac_certs.pem
+#security find-certificate -a -p > ~/all_mac_certs.pem; export SSL_CERT_FILE=~/all_mac_certs.pem;
+# export REQUESTS_CA_BUNDLE=~/all_mac_certs.pem
 #Install\ Certificates.command
 
 #
@@ -35,6 +36,7 @@ def load_model():
     model = EfficientNetB0(weights='imagenet')
     return model
 
+
 def preprocess_image(img):
     img = img.resize((224, 224))
     x = image.img_to_array(img)
@@ -42,10 +44,12 @@ def preprocess_image(img):
     x = preprocess_input(x)
     return x
 
+
 def print_predictions(preds):
     classes = decode_predictions(preds, top=3)[0]
     for cl in classes:
         st.write(cl[1], cl[2])
+
 
 # Загружаем предварительно обученную модель
 model = load_model()
