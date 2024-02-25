@@ -29,6 +29,7 @@ def load_image():
     else:
         return None
 
+
 @st.cache_resource
 def load_model():
     model = EfficientNetB0(weights='imagenet')
