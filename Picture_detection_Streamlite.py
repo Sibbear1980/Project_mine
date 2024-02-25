@@ -4,8 +4,6 @@
 # export REQUESTS_CA_BUNDLE=~/all_mac_certs.pem
 #Install\ Certificates.command
 
-#
-
 import io
 import streamlit as st
 from PIL import Image
